@@ -1,0 +1,9 @@
+<% html_title l(:create_due_date_menu_title, scope: :auto_due_date) %>
+
+<div>
+  <%= link_to(l(:home_link, scope: :auto_due_date), project_create_due_date_path(@project)) %>
+</div>
+
+<div>
+  <%= render partial: 'form', locals: { project: @project, create_due_date: @create_due_date } %>
+</div>

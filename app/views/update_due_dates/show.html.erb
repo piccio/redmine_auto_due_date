@@ -1,0 +1,24 @@
+<% html_title l(:update_due_date_menu_title, scope: :auto_due_date) %>
+
+<div>
+  <div class="box">
+    <%= l(:default_value, value: @settings['update_due_date'].to_i, scope: :auto_due_date) %>
+
+    <span class="float-right">
+      <%= link_to_if(User.current.admin?, l(:settings_link, scope: :auto_due_date),
+                     plugin_settings_path('redmine_auto_due_date')) %>
+
+      <% if(@update_due_date.nil?) %>
+        <span>|</span>
+        
+        <%= link_to(l(:new_link, scope: :auto_due_date), new_project_update_due_date_path(@project)) %>
+      <% end %>
+    </span>
+  </div>
+
+  <% unless(@update_due_date.nil?) %>
+    <div class="box">
+      <%= render partial: 'update_due_date', object: @update_due_date, locals: { project: @project } %>
+    </div>
+  <% end %>
+</div>

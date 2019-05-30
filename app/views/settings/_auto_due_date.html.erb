@@ -1,0 +1,19 @@
+<fieldset>
+  <legend><%= l(:create_due_date_fieldset, scope: :auto_due_date) %></legend>
+  <p>
+    <%= label 'settings[create_due_date]', l(:days, scope: :auto_due_date) %>
+    <%= text_field_tag 'settings[create_due_date]', @settings['create_due_date'], type: 'number', required: true,
+                       min: 0 %>
+    <%= content_tag :em, l(:create_due_date_info, scope: :auto_due_date), class: 'info' %>
+  </p>
+</fieldset>
+
+<fieldset>
+  <legend><%= l(:update_due_date_fieldset, scope: :auto_due_date) %></legend>
+  <p>
+    <%= label 'settings[update_due_date]', l(:days, scope: :auto_due_date) %>
+    <%= text_field_tag 'settings[update_due_date]', @settings['update_due_date'], type: 'number', required: true,
+                       min: 0 %>
+    <%= content_tag :em, l(:update_due_date_info, scope: :auto_due_date), class: 'info' %>
+  </p>
+</fieldset>

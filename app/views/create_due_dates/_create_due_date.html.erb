@@ -1,0 +1,9 @@
+<%= l(:current_value, value: create_due_date.days, scope: :auto_due_date) %>
+
+<span class="float-right">
+  <%= link_to(l(:edit_link, scope: :auto_due_date), edit_project_create_due_date_path(project)) %>
+
+  <span>|</span>
+
+  <%= link_to(l(:delete_link, scope: :auto_due_date), project_create_due_date_path(project), method: :delete) %>
+</span>

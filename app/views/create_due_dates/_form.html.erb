@@ -1,0 +1,31 @@
+<%=
+  form_for([project, create_due_date], url: project_create_due_date_path(project)) do |f|
+%>
+  <% if create_due_date.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(create_due_date.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% create_due_date.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="box tabular">
+    <p>
+      <%= f.label :days, class: create_due_date.errors.any? ? 'errors' : ''  do %>
+        <%= l(:days, scope: :auto_due_date) %>
+        <span class="required">*</span>
+      <% end %>
+      <%= f.text_field :days, type: 'number', required: true, min: 0 %>
+    </p>
+  </div>
+
+  <p>
+    <%= f.submit l(create_due_date.new_record? ? :create_btn : :update_btn, scope: :auto_due_date) %>
+  </p>
+<%
+  end
+%>

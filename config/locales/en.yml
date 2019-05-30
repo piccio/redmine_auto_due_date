@@ -1,0 +1,29 @@
+# English strings go here for Rails i18n
+en:
+  activerecord:
+    attributes:
+      create_due_date:
+        days: Number of Days
+  auto_due_date:
+    create_due_date_fieldset: create due date
+    create_due_date_info: when creating a ticket if due date is left blank then set it to such number of days after today
+    create_due_date_menu_title: Create Due Date
+    create_due_date_created: the value is saved
+    create_due_date_updated: the value is updated
+    create_due_date_deleted: the value is deleted
+    update_due_date_fieldset: update due date
+    update_due_date_info: when the assignee update a ticket set it to such number of days after today
+    update_due_date_menu_title: Update Due Date
+    update_due_date_created: the value is saved
+    update_due_date_updated: the value is updated
+    update_due_date_deleted: the value is deleted
+    days: Number of Days
+    home_link: return
+    new_link: override it
+    create_btn: create
+    update_btn: update
+    edit_link: modify
+    delete_link: delete
+    default_value: the default global value is %{value}
+    current_value: the current override value is %{value}
+    settings_link: set it
