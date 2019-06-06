@@ -20,7 +20,7 @@ module RedmineAutoDueDate
     def update_issue_from_params
       return unless super
 
-      if @project.module_enabled?('update_due_date') &&
+      if @issue.project.module_enabled?('update_due_date') &&
         @issue.assigned_to == User.current &&
         @issue.status == IssueStatus.find_by(name: 'In Progress')
 
