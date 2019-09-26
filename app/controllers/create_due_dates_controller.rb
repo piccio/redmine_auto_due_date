@@ -1,6 +1,6 @@
 class CreateDueDatesController < ApplicationController
-  before_filter :find_project_by_project_id
-  before_filter :authorize
+  before_action :find_project_by_project_id
+  before_action :authorize
 
   def show
     @create_due_date = CreateDueDate.where(project_id: @project.id).first

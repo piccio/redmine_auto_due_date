@@ -13,7 +13,9 @@ these 2 features are project's modules that could be enabled or not.
 
 if module is enabled and the global value is left empty then it will be equal to 0.
 
-tested on redmine 3.4.4
+use version 1.x on redmine 3.x (tested on redmine 3.4.4)
+
+use version 2.x on redmine 4.x (tested on redmine 4.0.4)
 
 #####TO DO:
 assignee and in progress constraints could be configurable.

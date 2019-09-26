@@ -16,7 +16,7 @@ Redmine::Plugin.register :redmine_auto_due_date do
   name 'Redmine Auto Due Date'
   author 'Roberto Piccini'
   description "when creating a ticket set the due date, if empty, to (today + X days). when the assignee updates a ticket and if the status is 'in progress' update the due date to (today + Y days)"
-  version '1.1.0'
+  version '2.0.0'
   url 'https://github.com/piccio/redmine_auto_due_date'
   author_url 'https://github.com/piccio'
 
