@@ -1,14 +1,14 @@
 require 'redmine_auto_due_date/hooks/view_layouts_base_html_head_hook'
-require 'redmine_auto_due_date/issues_controller_patch'
-require 'redmine_auto_due_date/mail_handler_patch'
+require 'redmine_auto_due_date/issue_patch'
+require 'redmine_auto_due_date/journal_patch'
 
 Rails.configuration.to_prepare do
-  unless IssuesController.included_modules.include? RedmineAutoDueDate::IssuesControllerPatch
-    IssuesController.prepend(RedmineAutoDueDate::IssuesControllerPatch)
+  unless Issue.included_modules.include? RedmineAutoDueDate::IssuePatch
+    Issue.prepend(RedmineAutoDueDate::IssuePatch)
   end
 
-  unless MailHandler.included_modules.include? RedmineAutoDueDate::MailHandlerPatch
-    MailHandler.prepend(RedmineAutoDueDate::MailHandlerPatch)
+  unless Journal.included_modules.include? RedmineAutoDueDate::JournalPatch
+    Journal.prepend(RedmineAutoDueDate::JournalPatch)
   end
 end
 
@@ -16,7 +16,7 @@ Redmine::Plugin.register :redmine_auto_due_date do
   name 'Redmine Auto Due Date'
   author 'Roberto Piccini'
   description "when creating a ticket set the due date, if empty, to (today + X days). when the assignee updates a ticket and if the status is 'in progress' update the due date to (today + Y days)"
-  version '2.0.0'
+  version '2.1.0'
   url 'https://github.com/piccio/redmine_auto_due_date'
   author_url 'https://github.com/piccio'
 
